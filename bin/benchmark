@@ -2,10 +2,9 @@
 # Imports
 import sys
 import os
-sys.path.append('./')
+sys.path.append(os.path.join(os.path.dirname(__file__), '../'))
 import day05
 import day06
-
 # Global variables
 # Functions
 
