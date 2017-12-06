@@ -1,0 +1,43 @@
+#!/usr/bin/python3
+# Imports
+import sys
+import os
+sys.path.append(os.path.abspath('.'))
+import day05
+import day06
+
+# Global variables
+# Functions
+
+# Main
+if __name__ == '__main__':
+    i = 0
+    max_i = len(sys.argv)
+    while i < max_i:
+        if i == 0:
+            next
+        elif i == 1:
+            print('skip')
+        elif i == 2:
+            print('skip')
+        elif i == 3:
+            print('skip')
+        elif i == 4:
+            print('skip')
+        elif i == 5:
+            print('skip')
+        elif i == 6:
+            print('skip')
+        elif i == 7:
+            print('skip')
+        elif i == 9:
+            day05.bench(1, sys.argv[i])
+        elif i == 10:
+            day05.bench(2, sys.argv[i])
+        elif i == 11:
+            day06.bench(1, sys.argv[i])
+        elif i == 12:
+            day06.bench(2, sys.argv[i])
+        else:
+            print('skip')
+        i += 1
