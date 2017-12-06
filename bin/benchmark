@@ -25,9 +25,9 @@ if __name__ == '__main__':
         elif i == 4:
             day02.bench(2, sys.argv[i])
         elif i == 5:
-            print('skip')
+            print('3 1 skip')
         elif i == 6:
-            print('skip')
+            print('3 2 skip')
         elif i == 7:
             day04.bench(1, sys.argv[i])
         elif i == 8:
