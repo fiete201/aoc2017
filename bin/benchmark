@@ -3,6 +3,7 @@
 import sys
 import os
 sys.path.append(os.path.join(os.path.dirname(__file__), '../'))
+import day04
 import day05
 import day06
 # Global variables
@@ -28,7 +29,9 @@ if __name__ == '__main__':
         elif i == 6:
             print('skip')
         elif i == 7:
-            print('skip')
+            day04.bench(1, sys.argv[i])
+        elif i == 8:
+            day04.bench(2, sys.argv[i])
         elif i == 9:
             day05.bench(1, sys.argv[i])
         elif i == 10:
