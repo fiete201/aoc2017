@@ -41,9 +41,11 @@ def part01():
             memorybanks[j%numberofbanks] += 1
             interim -= 1
             j += 1
-        for oldbanks in oldinput:
-            if (memorybanks == oldbanks):
-                loop_detected = 1
+       # for oldbanks in oldinput:
+       #     if (memorybanks == oldbanks):
+       #         loop_detected = 1
+        if memorybanks in oldinput:
+            loop_detected = 1
         iterations += 1
     result01 = iterations
 
@@ -76,11 +78,15 @@ def part02():
             j += 1
         k = 0
         #kmax = len(oldinput)
-        while k < iterations + 1:
-            if (memorybanks == oldinput[k]):
-                loop_detected = 1
-                loop_index_start = k
-            k += 1
+#        while k < iterations + 1:
+#            if (memorybanks == oldinput[k]):
+#                loop_detected = 1
+#                loop_index_start = k
+#            k += 1
+        if memorybanks in oldinput:
+            loop_detected = 1
+            loop_index_start = oldinput.index(memorybanks) 
+ 
         iterations += 1
     result02 = iterations - loop_index_start
 
