@@ -9,6 +9,7 @@ import day03
 import day04
 import day05
 import day06
+import day08
 # Global variables
 # Functions
 
@@ -41,4 +42,8 @@ if __name__ == '__main__':
             day06.bench(1, sys.argv[i])
         elif i == 12:
             day06.bench(2, sys.argv[i])
+        elif i == 15:
+            day08.bench(1, sys.argv[i])
+        elif i == 16:
+            day08.bench(2, sys.argv[i])
         i += 1
