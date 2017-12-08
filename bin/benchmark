@@ -41,6 +41,4 @@ if __name__ == '__main__':
             day06.bench(1, sys.argv[i])
         elif i == 12:
             day06.bench(2, sys.argv[i])
-        else:
-            print('skip')
         i += 1
