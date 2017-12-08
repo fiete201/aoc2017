@@ -96,6 +96,7 @@ def part02():
 
 def bench(part=0, filename=''):
     global instructions
+    global registers
     instructions = []
     if filename != '':
         with open(filename, 'r') as f:
