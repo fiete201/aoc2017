@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 # Imports
 import sys
-from datetime import datetime
-import time
+from functools import partial
 import timeit
 
 # Global variables
@@ -11,8 +10,8 @@ result01 = 0
 result02 = 0
 
 # Functions
-def part01():
-    global jumplist
+def part01(jumplist=[]):
+    #global jumplist
     global result01
     pc = 0
     maxpc = 0
@@ -25,8 +24,8 @@ def part01():
         steps += 1
     result01 = steps
 
-def part02():
-    global jumplist
+def part02(jumplist=[]):
+    #global jumplist
     global result02
     pc = 0
     steps = 0
@@ -49,10 +48,10 @@ def bench(part=0, filename=''):
             for line in f:
                 jumplist.append(int(line))
         if part == 1:
-            duration01 = timeit.timeit("part01()", setup="from day05 import part01", number=1)
+            duration01 = timeit.timeit(partial(part01, jumplist.copy()), setup="from day05 import part01", number=1)
             print(5, 1, result01, int(duration01 * 10 ** 6))
         elif part == 2:
-            duration02 = timeit.timeit("part02()", setup="from day05 import part02", number=1)
+            duration02 = timeit.timeit(partial (part02, jumplist.copy()), setup="from day05 import part02", number=1)
             print(5, 2, result02, int(duration02 * 10 ** 6)) 
             
 
@@ -62,8 +61,8 @@ if __name__ == '__main__':
         for line in f:
             jumplist.append(int(line))
 
-    duration01 = timeit.timeit("part01()", setup="from __main__ import part01", number=1)
+    duration01 = timeit.timeit(partial(part01, jumplist.copy()), setup="from __main__ import part01", number=1)
     print(5, 1, result01, int(duration01 * 10 ** 6))
 
-    duration02 = timeit.timeit("part02()", setup="from __main__ import part02", number=1)
+    duration02 = timeit.timeit(partial(part02, jumplist.copy()), setup="from __main__ import part02", number=1)
     print(5, 2, result02, int(duration02 * 10 ** 6)) 
