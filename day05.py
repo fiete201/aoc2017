@@ -17,10 +17,12 @@ def part01(jumplist=[]):
     maxpc = 0
     steps = 0
     maxpc = len(jumplist)
+    pcv = jumplist[pc]
     while (pc < maxpc and pc > -1):
         oldpc = pc
-        pc += jumplist[pc]
-        jumplist[oldpc] += 1
+        pcv = jumplist[pc]
+        pc += pcv
+        jumplist[oldpc] = pcv + 1
         steps += 1
     result01 = steps
 
@@ -30,19 +32,20 @@ def part02(jumplist=[]):
     pc = 0
     steps = 0
     maxpc = len(jumplist)
+    pcv = jumplist[pc]
     while (pc < maxpc and pc > -1):
         oldpc = pc
-        pc += jumplist[pc]
-        if (jumplist[oldpc] > 2):
-            jumplist[oldpc] -= 1
+        pcv = jumplist[pc]
+        pc += pcv
+        if (pcv > 2):
+            jumplist[oldpc] = pcv - 1
         else:
-            jumplist[oldpc] += 1
+            jumplist[oldpc] = pcv + 1
         steps += 1
     result02 = steps
 
 def bench(part=0, filename=''):
     global jumplist
-    jumplist = []
     if filename != '':
         with open(filename, 'r') as f:
             for line in f:
